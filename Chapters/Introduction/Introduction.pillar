@@ -36,100 +36,166 @@ For basic uses, one should be able to create a new meta-model by composing the e
 !!!Catalog of Concepts
 @ch:ngCatalog
 
--TAnnotationInstance
--TInvocation
--TEnumValue
--TWithImplicitVariables
--TFunction
--TCompilationUnit
--TAccessible
--TWithAttributes
--TWithTypes
--TType
--TException
--TPackage
--TAccess
--TWithModule
--TSub
--TWithNamespaces
--TWithThrownExceptions
--TTemplateUser
--TWithMethods
--TWithReferences
--TModule
--TWithAnnotationInstanceAttributes
--TWithComments
--TSourceLanguage
--TImplicitVariable
--TTypeAlias
--TWithAnnotationTypes
--TWithTemplates
--TWithSourceLanguage
--TPreprocessorIfdef
--TWithPackages
--TReference
--TFileAnchor
--TLocalVariable
--TWithSuperInheritances
--TParameter
--TWithTypeAliases
+The philosophy of FamixNG is to offer a catalog of simple traits, one trait for each individual property offered.
+Thus for example expressing that an entity may have a comment modelled by two traits: ==Tcomment== that holds the comment and ==TWithComment== modelling any entity that can have a comment.
+When creating a new metamodel, one can then have a concept inheriting from ==TWithComment==.
+
+!!!!Scoping traits
+
++Scoping traits>file://figures/scopes.png+
+
 -TPackageable
--TSubInheritance
--TWithFunctions
--TWithParameterizedTypeUsers
--TSuperInheritance
--TWithDeclaredExceptions
--TNamespaceEntity
--TTypedAnnotationInstanceAttribute
--TWithFileInclude
+-TPackage
+-TWithPackages
 -TNamespace
--TTypedStructure
--TWithHeader
--TWithParameterizedTypes
--TAttribute
--TInvocationsReceiver
--TWithInvocations
--TComment
+-TWithNamespaces
+-TNamespaceEntity
+-TNamed
+-TScopingEntity
 -TWithClassScope
--TWithAnnotationInstances
--TWithAccesses
--TInvocable
--TWithCompilationUnit
--TWithSourceAnchor
--TWithSubInheritances
--TAssociation
--TThrownException
--TWithDereferencedInvocations
--TTemplate
+
+!!!!C/C++ scoping traits
+
+-TModule
+-TWithModule
+
+!!!!Type traits
+
++Type traits>file://figures/types.png+
+
+
+-TType
+-TWithTypes
+-TTypeAlias
+-TWithTypeAliases
+-TTypedStructure
 -TWithTypedStructures
 -TParameterizedType
--TFileInclude
--TWithModifiers
--TSuper
--TWithSignature
--TGlobalVariableScope
--TAnnotationType
--TFile
--TAnnotationTypeAttribute
--TWithParameters
--TWithFiles
--TWithTrait
--TScopingEntity
--TSourceAnchor
--TDeclaredException
--TPreprocessorDefine
--TWithLocalVariables
--THeader
--TTrait
--TWithEnumValues
--TCaughtException
--TAnnotationInstanceAttribute
--TMethod
--TGlobalVariable
--TReferenceable
+-TWithParameterizedTypes
 -TParameterizedTypeUser
--TNamed
--TWithExceptions
--TTypedAnnotationInstance
--TWithCaughtExceptions
+-TWithParameterizedTypeUsers
+-TTrait
+-TWithTrait
+
+!!!!Behvioural traits
+
++Behavioural traits>file://figures/behaviors.png+
+
+-TMethod
+-TWithMethods
+-TWithSignature
+-TFunction
+-TWithFunction
+
+!!!!Variable traits
+
++Variable traits>file://figures/vars.png+
+
+-TImplicitVariable
+-TWithImplicitVariables
+-TLocalVariable
+-TWithLocalVariables
+-TGlobalVariable
+-TGlobalVariableScope
+-TParameter
+-TWithParameters
+-TAttribute
+-TWithAttributes
+-TEnumValue
+-TWithEnumValues
+
+!!!!Association traits
+
++Association traits>file://figures/assocs.png+
+
+-TAssociation
+-TReference
+-TWithReferences
+-TReferenceable
+-TAccessible
+-TAccess
+-TWithAccesses
+-TInvocable
+-TInvocation
+-TWithInvocations
+-TInvocationsReceiver
+-TSuper
+-TSuperInheritance
+-TWithSuperInheritances
+-TSub
+-TSubInheritance
+-TWithSubInheritances
+
+!!!!C/C++ Association traits
+
 -TDereferencedInvocation
+-TWithDereferencedInvocations
+
+!!!!Annotation traits
+
++Annotation traits>file://figures/annot.png+
+
+-TAnnotationType
+-TWithAnnotationTypes
+-TAnnotationInstance
+-TWithAnnotationInstances
+-TAnnotationInstanceAttribute
+-TWithAnnotationInstanceAttributes
+-TAnnotationTypeAttribute
+-TTypedAnnotationInstance
+-TTypedAnnotationInstanceAttribute
+
+!!!!Exception traits
+
++Annotation traits>file://figures/exceptions.png+
+
+-TException
+-TWithExceptions
+-TCaughtException
+-TWithCaughtExceptions
+-TThrownException
+-TWithThrownExceptions
+-TDeclaredException
+-TWithDeclaredExceptions
+
+!!!!Miscelaneous traits
+
++Miscelaneous traits>file://figures/misc.png+
+
+-TTemplate
+-TWithTemplates
+-TTemplateUser
+-TWithModifiers
+-TWithComments
+-TComment
+
+!!!!C/C++ Miscelaneous traits
+
+-TCompilationUnit
+-TWithCompilationUnit
+-TPreprocessorIfdef
+-TPreprocessorDefine
+
+!!!!Technical traits
+
++Technical traits>file://figures/technic.png+
+
+-TSourceLanguage
+-TWithSourceLanguage
+-TSourceAnchor
+-TWithSourceAnchor
+-TFileAnchor
+
+!!!!File traits
+
++File traits>file://figures/files.png+
+
+-TFile
+-TWithFiles
+
+!!!!C/C++ File traits
+
+-THeader
+-TWithHeader
+-TFileInclude
+-TWithFileInclude
